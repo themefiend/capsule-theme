@@ -66,7 +66,7 @@ Customization Instructions:
    
   <body id="{{ page.permalink }}-page" class="{{ page.category }}">
 	<div id="TFConfigPanel">
-		<a href="{{ store.url }}?devmode=true" class="viewSite" target="parent">View Site / {{ page.full_url }}</a>
+		<a href="{{ store.url }}?devmode=true" class="viewSite" target="parent">View Site</a>
     </div>
 	<div class="loading_wrap"><div class="spinner"></div></div>
 	{% assign: page_content = '' %}{{ page_content }}
@@ -116,11 +116,7 @@ Customization Instructions:
   
   
   <script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/admin_capsule-theme.js"></script>
-  <script>
-  if (window.location.href.indexOf('about:blank') > -1 ) {
-		document.querySelector('#TFConfigPanel').innerHTML = adminHTML + '<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">';
-   }
-</script>
+
  
   <!-- BEGIN EXTRA SCRIPTS -->
   
