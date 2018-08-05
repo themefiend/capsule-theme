@@ -25,7 +25,7 @@ Customization Instructions:
 	<title>{% if page.full_url contains "search=" %}Product Search{% else %}{{ page.name }}{% endif %} | {{ store.name }}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-	{% assign: env = 'production/' %}
+	{% assign: env = 'staging/' %}
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="https://s3.amazonaws.com/themefiend/multiple-product-options/mpo_styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}capsule-theme-styles.css">
@@ -67,7 +67,18 @@ Customization Instructions:
    
   <body id="{{ page.permalink }}-page" class="{{ page.category }}">
 	<div id="TFConfigPanel">
-		<a href="{{ store.url }}?devmode=true" class="viewSite" target="parent">View Site</a>
+		<div class="page-wrap d-flex flex-row align-items-center" style="min-height: 100vh">
+		    <div class="container">
+		        <div class="row justify-content-center">
+		            <div class="col-md-12 text-center">
+		                <span class="h4 mb-2 font-weight-bold">Capsule</span>
+		                <span class="display-1 d-block">503 Error</span>
+		                <div class="mb-4 lead">Temporary error with loading the page. Issue should be resolved shortly.</div>
+		                <div>Please refresh after a few seconds.</div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
     </div>
 	<div class="loading_wrap"><div class="spinner"></div></div>
 	{% assign: page_content = '' %}{{ page_content }}
