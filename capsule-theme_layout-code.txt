@@ -19,15 +19,16 @@ Customization Instructions:
 {% assign: LICENSE_KEY = "TF-XXXX-XXXX-XXXX-XXXX" %}
 
 
+
 <html>
   <head>
 	<title>{% if page.full_url contains "search=" %}Product Search{% else %}{{ page.name }}{% endif %} | {{ store.name }}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-	
+	{% assign: env = 'staging/' %}
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="https://s3.amazonaws.com/themefiend/multiple-product-options/mpo_styles.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="https://s3.amazonaws.com/themefiend/capsule-theme/capsule-theme-styles.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}capsule-theme-styles.css">
 	<!-- Older FontAwesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<!-- Newer FontAwesome -->
@@ -36,8 +37,8 @@ Customization Instructions:
 	<script src="{{ 'api' | theme_js_url }}"></script>
 	 <script type="text/javascript">var licenseKey = '{{ LICENSE_KEY }}'; var storeURL = '{{ store.url }}'; var pageTitle = '{{ page.name }}'; var pageType = '{{ page.category }}'; {% if page.category == "custom" %}var pageContent = '{{ page.content | paragraphs }}';{% endif %}</script>
 	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js" async></script>
-	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/trial_capsule-theme.js"></script>
-	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/capsule-theme-build.js"></script>	
+	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}trial_capsule-theme.js"></script>
+	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}capsule-theme-build.js"></script>	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.20/jquery.zoom.min.js" async></script>
 	
@@ -115,7 +116,7 @@ Customization Instructions:
   </script>
   
   
-  <script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/admin_capsule-theme.js"></script>
+  <script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}admin_capsule-theme.js"></script>
 
  
   <!-- BEGIN EXTRA SCRIPTS -->
