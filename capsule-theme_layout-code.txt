@@ -16,7 +16,7 @@ Customization Instructions:
 {% endcapture %}
 
 
-{% assign: LICENSE_KEY = "TF-XXXX-XXXX-XXXX-XXXX" %}
+{% assign: LICENSE_KEY = "TF-SS0K-0CU6-1JXC-6F5X" %}
 
 
 
