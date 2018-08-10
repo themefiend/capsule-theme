@@ -27,7 +27,7 @@ Customization Instructions:
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	{% assign: env = 'production/' %}
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="https://s3.amazonaws.com/themefiend/multiple-product-options/mpo_styles.css" rel="stylesheet">
+	<link href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}theme-apps/mpo_capsule-theme_styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}core-theme/capsule-theme-styles.css">
 	<!-- Older FontAwesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
