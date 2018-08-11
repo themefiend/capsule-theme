@@ -17,7 +17,7 @@ Customization Instructions:
 
 
 {% assign: LICENSE_KEY = "TF-XXXX-XXXX-XXXX-XXXX" %}
-
+{% assign: Google_Account_Email = "youremail@gmail.com" %} {{ Note: Enter your Google account email address to reference which Google account originally accessed the theme customization form. }}
 
 
 <html>
@@ -35,7 +35,7 @@ Customization Instructions:
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="{{ 'api' | theme_js_url }}"></script>
-	 <script type="text/javascript">var environment = '{{ env }}'; var licenseKey = '{{ LICENSE_KEY }}'; var storeName = '{{ store.name | escape }}'; var storeURL = '{{ store.url }}'; var pageTitle = '{{ page.name }}'; var pageType = '{{ page.category }}'; {% if page.category == "custom" %}var pageContent = '{{ page.content | paragraphs }}';{% endif %}</script>
+	 <script type="text/javascript">var googleEmail = '{{ Google_Account_Email }}'; var environment = '{{ env }}'; var licenseKey = '{{ LICENSE_KEY }}'; var storeName = '{{ store.name | escape }}'; var storeURL = '{{ store.url }}'; var pageTitle = '{{ page.name }}'; var pageType = '{{ page.category }}'; {% if page.category == "custom" %}var pageContent = '{{ page.content | paragraphs }}';{% endif %}</script>
 	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js" async></script>
 	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}trial/trial_capsule-theme.js"></script>
 	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}core-theme/capsule-theme-build.js"></script>	
