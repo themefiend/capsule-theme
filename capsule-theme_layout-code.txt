@@ -1,23 +1,12 @@
-{% capture instructions %}
 <!--- 
 Theme: Capsule
 Author: Theme Fiend
-
-Installation Instructions: 
--------------------
-- Copy and paste entire code from this file into 'Layout' edit page of your Big Cartel shop. And that's it! The theme is installed!
-
-Customization Instructions:
-------------------
-- Go to the customize panel of the Capsule theme via Google form: https://docs.google.com/forms/d/e/1FAIpQLSc9VSnH7T8yfMOwy7gHzC5_kMce4bQ9niOqDhye4N8H0ISaSA/viewform. Can log in via your Google account.
-- Enter your License Key in the corresponding field of the Google form. Customize theme to your hearts content! :) 
-- Enter your License Key in the corresponding field below.
+Website: themefiend.com
 --->
-{% endcapture %}
 
+{{ Enter your license key in the field below, replacing current license key. }}
 
 {% assign: LICENSE_KEY = "TF-XXXX-XXXX-XXXX-XXXX" %}
-{% assign: Google_Account_Email = "youremail@gmail.com" %} {{ Note: Enter your Google account email address to reference which Google account originally accessed the theme customization form. }}
 
 
 <html>
@@ -25,20 +14,31 @@ Customization Instructions:
 	<title>{% if page.full_url contains "search=" %}Product Search{% else %}{{ page.name }}{% endif %} | {{ store.name }}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-	{% assign: env = 'production/' %}
+	{% assign: env = 'production/' %}{% assign: version = '_version/v1/' %}
+   
+
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}theme-apps/mpo_capsule-theme_styles.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}core-theme/capsule-theme-styles.css">
+	<link href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ version }}{{ env }}theme-apps/mpo_capsule-theme_styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ version }}{{ env }}core-theme/capsule-theme-styles.css">
 	<!-- Older FontAwesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<!-- Newer FontAwesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="{{ 'api' | theme_js_url }}"></script>
-	 <script type="text/javascript">var googleEmail = '{{ Google_Account_Email }}'; var environment = '{{ env }}'; var licenseKey = '{{ LICENSE_KEY }}'; var storeName = '{{ store.name | escape }}'; var storeURL = '{{ store.url }}'; var pageTitle = '{{ page.name }}'; var pageType = '{{ page.category }}'; {% if page.category == "custom" %}var pageContent = '{{ page.content | paragraphs }}';{% endif %}</script>
-	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js" async></script>
-	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}trial/trial_capsule-theme.js"></script>
-	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}core-theme/capsule-theme-build.js"></script>	
+	 <script type="text/javascript">var environment = '{{ env }}';var licenseKey = '{{ LICENSE_KEY }}';var storeName = '{{ store.name | escape }}';var storeURL = '{{ store.url }}'; var pageTitle = '{{ page.name }}'; var pageType = '{{ page.category }}'; {% if page.category == "custom" %}var pageContent = document.querySelector('#page-content').innerHTML;{% endif %}</script>
+	 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js" async></script>
+    
+       
+    
+	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ version }}{{ env }}trial/trial_capsule-theme.js"></script>
+	<script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ version }}{{ env }}core-theme/capsule-theme-build.js"></script>	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.20/jquery.zoom.min.js" async></script>
 	
@@ -58,16 +58,22 @@ Customization Instructions:
 	<script type="text/javascript" src="https://abouolia.github.io/sticky-sidebar/js/rAF.js"></script>
 	<script type="text/javascript" src="https://abouolia.github.io/sticky-sidebar/js/ResizeSensor.js"></script>
 	<script type="text/javascript" src="https://abouolia.github.io/sticky-sidebar/js/sticky-sidebar.js"></script>
-
-	<script src="//assets.juicer.io/embed.js" type="text/javascript"></script>
-	<link href="//assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
+    
+       <link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/themefiend/capsule-theme/{{ version }}{{ env }}admin/admin_capsule-theme.css"/>
+    
 
 	{{ head_content }}
+    
+    
+    
   </head>
+        
    
   <body id="{{ page.permalink }}-page" class="{{ page.category }}">
-	<div id="TFConfigPanel">
-		<div class="page-wrap d-flex flex-row align-items-center" style="min-height: 100vh">
+    
+    <div id="TFConfigPanel" style="display: none">    
+      
+		<div class="page-wrap d-flex flex-row align-items-center" style="min-height: 100vh; display:none !important">
 		    <div class="container">
 		        <div class="row justify-content-center">
 		            <div class="col-md-12 text-center">
@@ -79,9 +85,28 @@ Customization Instructions:
 		        </div>
 		    </div>
 		</div>
-    </div>
+      
+      <header class="fixed-top">
+		    <div class="container-fluid d-flex justify-content-between align-items-center border-bottom">
+				<div class="col-md-2 col-4"><img src="https://themefiend.com/wp-content/uploads/theme-fiend-logo.svg"></div>
+				<div class="customizer-bar col-md-3 col-3 d-flex justify-content-end"><div class=""><button data-action="save-changes" type="button" class="save-changes btn btn-lg" data-loading-text="<i class=&#x27;fa fa-circle-o-notch fa-spin&#x27;></i>  Saving...">Save Changes</button></div></div>
+			</div>
+			<div class="container-fluid d-flex justify-content-between align-items-center py-3 border-bottom">
+				<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					<label class="tf-admin_tab btn btn-lg btn-link active"><input type="radio" name="admin-view" data-admin-view="Dashboard" value="tf-admin_dashboard" autocomplete="off" checked=""><i class="material-icons mr-2">dashboard</i><span>Dashboard<span></label>
+					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Appearance" value="tf-admin_appearance" autocomplete="off"><i class="material-icons mr-2">palette</i><span>Appearance</span></label>
+					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Configuration" value="tf-admin_configuration" autocomplete="off"><i class="material-icons mr-2">settings</i><span>Configuration</span></label>
+					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Images" value="tf-admin_images" autocomplete="off"><i class="material-icons mr-2">photo_library</i><span>Images</span></label>
+					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Extra Styles" value="tf-admin_extra-styles" autocomplete="off"><i class="material-icons mr-2">code</i><span>Extra Styles</span></label>
+			 	</div>
+			</div>
+		</header>
+		<form action="" method="post" class="customizer-form container ml-0"><div class="row customizer-form_holder col-12 ml-0"></div></form>
+
+        </div>
+	
 	<div class="loading_wrap"><div class="spinner"></div></div>
-	{% assign: page_content = '' %}{{ page_content }}
+    <div id="page-content" style="display:none">{{ page_content }}</div>
 	{% if page.full_url contains '/product' %}
 	<div class="product_description" style="display:none">
 		{% assign prodDesc = product.description | split: '[tab]' %}
@@ -125,9 +150,11 @@ Customization Instructions:
   var productGridData = { {% if page.full_url contains "/product/" %}"current_product_id": "{{ product.id }}",{% endif %} "products": [ {% if page.full_url contains '/product/' %} {% for product in products.all %} {% unless product.id == currentProduct %} { "title": "{{ product.name }}", "images": [{% for image in product.images %}"{{ image | product_image_url | constrain: '900'}}",{% endfor %}], "url": "{{ product.url }}", "maxPrice": "{{ product.max_price | money_with_sign | strip_html }}", "defaultPrice": "{{ product.default_price | money_with_sign | strip_html }}", "maxPriceVal": "{{ product.max_price | money }}", "defaultPriceVal": {{ product.default_price | money }}, "status": "{{ product.status }}", "onSale": "{{ product.on_sale }}", "index": "{{ forloop.index }}", "ppr": "{{ p_pr }}", "creationDate": "{{ product.created_at | date: '%m-%d-%y' }}", "categories":[{% for category in product.categories %}{"value": "{{ category.permalink }}"},{% endfor %}], "product_options":[ {% for option in product.options %} {% assign: variant_option = option.name | split: Option_Name_Seperator %} {% capture optionName %}{{ variant_option[0] }} / {{ variant_option[1] }}{% endcapture %} {"title": "{{ variant_option[0] }}", "tag": "{{ variant_option[0] | replace: ' ', '+' | replace: '/', '-' }}", "relationship": {% if option.name contains Option_Name_Seperator %}"parent"{% else %}null{% endif %}, "value": "{{ variant_option[0] | downcase | escape | replace: ' ', '-'}}", "options": [ {% for option in product.options %}{% if option.name == optionName %}{"title": "{{ option.name | remove: variant_option[0] | remove: Option_Name_Seperator }}", "id": "{{ option.id }}", "parent": "{{ variant_option[0] | downcase | escape | replace: ' ', '-'}}", "price":"{{ option.price | money: 'sign' | strip_html }}", "status":"{% if option.quantity == 0 %}sold-out{% else %}in-stock{% endif %}"},{% endif %}{% endfor %} ]}, {% endfor %} ] }, {% endunless %} {% endfor %} {% endif %} {% if page.full_url contains '/products' or page.full_url contains '/category' %}{% assign prodLimit = theme.products_per_page%}{% endif %}{% if page.permalink == 'home' %}{% assign prodLimit = theme.featured_products %}{% endif %} {% if page.full_url contains '/products' or page.full_url contains '/category' or page.permalink == 'home' %} {% paginate products from products.current %}{% for product in products limit: prodLimit %} { "title": "{{ product.name }}", "images": [{% for image in product.images %}"{{ image | product_image_url | constrain: '900'}}",{% endfor %}], "url": "{{ product.url }}", "maxPrice": "{{ product.max_price | money_with_sign | strip_html }}", "defaultPrice": "{{ product.default_price | money_with_sign | strip_html }}", "maxPriceVal": {{ product.max_price | money }}, "defaultPriceVal": {{ product.default_price | money }}, "status": "{{ product.status }}", "onSale": "{{ product.on_sale }}", "index": "{{ forloop.index }}", "ppr": "{{ p_pr }}", "creationDate": "{{ product.created_at | date: '%m-%d-%y' }}", "categories":[{% for category in product.categories %}{"value": "{{ category.permalink }}"},{% endfor %}], "product_options":[ {% for option in product.options %} {% assign: variant_option = option.name | split: Option_Name_Seperator %} {% capture optionName %}{{ variant_option[0] }} / {{ variant_option[1] }}{% endcapture %} {"title": "{{ variant_option[0] }}", "tag": "{{ variant_option[0] | replace: ' ', '+' | replace: '/', '-' }}", "relationship": {% if option.name contains Option_Name_Seperator %}"parent"{% else %}null{% endif %}, "value": "{{ variant_option[0] | downcase | escape | replace: ' ', '-'}}", "options": [ {% for option in product.options %}{% if option.name == optionName %}{"title": "{{ option.name | remove: variant_option[0] | remove: Option_Name_Seperator }}", "id": "{{ option.id }}", "parent": "{{ variant_option[0] | downcase | escape | replace: ' ', '-'}}", "price":"{{ option.price | money: 'sign' | strip_html }}", "status":"{% if option.quantity == 0 %}sold-out{% else %}in-stock{% endif %}"},{% endif %}{% endfor %} ]}, {% endfor %} ] }, {% endfor %}{% endpaginate %}{% endif %} ] };
   var cartData = {"cartCount": {{ cart.item_count }}, "cartSubtotal": "{{ cart.subtotal | money: 'sign' | strip_html }}", "cartTotal": "{{ cart.total | money: 'sign' | strip_html }}",  "items": [ {% for item in cart.items %} { "title": "{{ item.product.name }}", "id": "{{ item.id }}", "images": [{% for image in item.product.images %}"{{ image | product_image_url | constrain: '900'}}",{% endfor %}], "url": "{{ item.product.url }}", "unit_price": "{{ item.unit_price | money_with_sign | strip_html }}", "quantity": "{{ item.quantity }}", "total_price": "{{ item.price | money_with_sign | strip_html }}", "stock_status": "{{ item.product.status }}", "onSale": "{{ item.product.on_sale }}", "index": "{{ forloop.index }}", "current_option": "{{ item.option.name }}", "product_options":[ {% for option in item.product.options %} {% assign: variant_option = item.option.name | split: ' / ' %} {% capture optionName %}{{ variant_option[0] }} / {{ variant_option[1] }}{% endcapture %} {"title": "{{ variant_option[0] }}", "tag": "{{ variant_option[0] | replace: ' ', '+' | replace: '/', '-' }}", "relationship": {% if item.option.name contains ' / ' %}"parent"{% else %}null{% endif %}, "value": "{{ variant_option[0] | downcase | escape | replace: ' ', '-'}}", "options": [ {% if item.option.name == optionName %}{"title": "{{ item.option.name | remove: variant_option[0] | remove: ' / ' }}", "id": "{{ item.option.id }}", "parent": "{{ variant_option[0] | downcase | escape | replace: ' ', '-'}}", "price":"{{ item.option.price | money: 'sign' | strip_html }}"},{% endif %} ]}, {% endfor %} ] }, {% endfor %} ] };
   </script>
+    
+
   
   
-  <script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ env }}admin/admin_capsule-theme.js"></script>
+  <script type="text/javascript" src="https://s3.amazonaws.com/themefiend/capsule-theme/{{ version }}{{ env }}admin/admin_capsule-theme.js"></script>
 
  
   <!-- BEGIN EXTRA SCRIPTS -->
@@ -135,3 +162,5 @@ Customization Instructions:
   <!-- END EXTRA SCRIPTS -->
   
 </html>
+    
+    
