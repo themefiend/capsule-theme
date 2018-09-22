@@ -98,11 +98,11 @@ Website: themefiend.com
 			</div>
 			<div class="container-fluid d-flex justify-content-between align-items-center py-3 border-bottom">
 				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					<label class="tf-admin_tab btn btn-lg btn-link active"><input type="radio" name="admin-view" data-admin-view="Dashboard" value="tf-admin_dashboard" autocomplete="off" checked=""><i class="material-icons mr-2">dashboard</i><span>Dashboard<span></label>
-					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Appearance" value="tf-admin_appearance" autocomplete="off"><i class="material-icons mr-2">palette</i><span>Appearance</span></label>
+					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Dashboard" value="tf-admin_dashboard" autocomplete="off" checked=""><i class="material-icons mr-2">dashboard</i><span>Dashboard<span></label>
+					<label class="tf-admin_tab btn btn-lg btn-link active"><input type="radio" name="admin-view" data-admin-view="Home Page" value="tf-admin_home-page" autocomplete="off"><i class="material-icons mr-2">home</i><span>Home Page</span></label>
+                    <label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Core Pages" value="tf-admin_core-pages" autocomplete="off"><i class="material-icons mr-2">settings</i><span>Core Pages</span></label>
+                    <label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Appearance" value="tf-admin_appearance" autocomplete="off"><i class="material-icons mr-2">palette</i><span>Appearance</span></label>
 					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Layout" value="tf-admin_layout" autocomplete="off"><i class="material-icons mr-2">web</i><span>Layout</span></label>
-					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Home Page" value="tf-admin_home-page" autocomplete="off"><i class="material-icons mr-2">home</i><span>Home Page</span></label>
-					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Core Pages" value="tf-admin_core-pages" autocomplete="off"><i class="material-icons mr-2">shopping_cart</i><span>Core Pages</span></label>
 					<label class="tf-admin_tab btn btn-lg btn-link"><input type="radio" name="admin-view" data-admin-view="Extra Styles" value="tf-admin_extra-styles" autocomplete="off"><i class="material-icons mr-2">code</i><span>Extra Styles</span></label>
 			 	</div>
 			</div>
