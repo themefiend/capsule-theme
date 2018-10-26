@@ -31,7 +31,7 @@ Website: themefiend.com
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<script src="{{ 'api' | theme_js_url }}"></script>
-	 <script type="text/javascript">var environment = '{{ env }}';var licenseKey = '{{ LICENSE_KEY }}';var storeName = '{{ store.name | escape }}';var storeURL = '{{ store.url }}'; var pageTitle = '{{ page.name | escape }}'; var pageType = '{{ page.category }}'; {% if page.category == "custom" %}var pageContent = document.querySelector('#page-content').innerHTML;{% endif %}</script>
+	 <script type="text/javascript">var environment = '{{ env }}';var licenseKey = '{{ LICENSE_KEY }}';var storeName = '{{ store.name | escape }}';var storeURL = '{{ store.url }}'; var pageTitle = '{{ page.name | escape | replace: "'", "&#39;" }}'; var pageType = '{{ page.category }}'; {% if page.category == "custom" %}var pageContent = document.querySelector('#page-content').innerHTML;{% endif %}</script>
 	 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     
